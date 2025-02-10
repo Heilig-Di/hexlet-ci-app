@@ -3,17 +3,14 @@ name: ci-app
 on: push
 
 jobs:
-	build:
-		runs-on: ubuntu-latest
-
-		steps:
-			- uses: actions/checkout@v4
-   
-   			- name: Setup
-      			run: make setup
-	  
-	  		- name: Test
-      			run: make test
-	  
-	  		- name: Lint
-			run: make lint
+ build:
+  runs-on: ubuntu-latest
+  
+  steps:
+   - uses: actions/checkout@v4
+   - name: Setup
+     run: make setup
+   - name: Test
+     run: make test
+   - name: Lint
+     run: make lint
